@@ -23,7 +23,7 @@ stages:
 
   # Put your custom actions below this comment
 
-  - name: example-packages # Sample module using the built-in Apt module to install packages
+  - name: base-packages
     type: apt
     source:
       packages:
@@ -34,6 +34,17 @@ stages:
       - curl
       - net-tools
       - wget
+      - unzip
+
+  - name: gnome-extensions
+    type: apt
+    source:
+      packages:
+      - gnome-shell-extension-appindicator
+      - gnome-shell-extension-arc-menu
+      - gnome-shell-extension-blur-my-shell
+      - gnome-shell-extension-dash-to-panel
+      - gnome-shell-extension-user-theme
 
   # - name: example-commands # Sample module demonstrating the Shell module with custom commands
   #   type: shell
