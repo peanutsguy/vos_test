@@ -124,7 +124,7 @@ show-control-icons=false
 show-label=false
 
 [org/gnome/shell/extensions/user-theme]
-name='Fluent-Light'
+name='Fluent-Dark'
 
 [org/gnome/desktop/background]
 picture-options='zoom'
