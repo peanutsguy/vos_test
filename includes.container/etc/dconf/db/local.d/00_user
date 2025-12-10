@@ -128,5 +128,5 @@ name='Fluent-Dark'
 
 [org/gnome/desktop/background]
 picture-options='zoom'
-picture-uri='file:///usr/share/backgrounds/wp_light.jpg'
-picture-uri-dark='file:///usr/share/backgrounds/wp_dark.jpg'
+picture-uri='file:///usr/share/backgrounds/kof/wp_light.jpg'
+picture-uri-dark='file:///usr/share/backgrounds/kof/wp_dark.jpg'

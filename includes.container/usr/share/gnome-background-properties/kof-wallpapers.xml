@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE wallpapers SYSTEM "gnome-wp-list.dtd">
+<wallpapers>
+  <wallpaper>
+    <name>Linows 11</name>
+    <filename>/usr/share/backgrounds/kof/wp_light.jpg</filename>
+    <filename-dark>/usr/share/backgrounds/kof/wp_dark.jpg</filename-dark>
+    <options>zoom</options>
+    <pcolor>#000000</pcolor>
+    <scolor>#000000</scolor>
+    <shade_type>solid</shade_type>
+  </wallpaper>
+  <wallpaper>
+    <name>Rancho Cucamonga</name>
+    <filename>/usr/share/backgrounds/kof/cucamonga_light.png</filename>
+    <filename-dark>/usr/share/backgrounds/kof/cucamonga_dark.png</filename-dark>
+    <options>zoom</options>
+    <pcolor>#000000</pcolor>
+    <scolor>#000000</scolor>
+    <shade_type>solid</shade_type>
+  </wallpaper>
+  <wallpaper>
+    <name>Dome</name>
+    <filename>/usr/share/backgrounds/kof/dome_light.png</filename>
+    <filename-dark>/usr/share/backgrounds/kof/dome_dark.png</filename-dark>
+    <options>zoom</options>
+    <pcolor>#000000</pcolor>
+    <scolor>#000000</scolor>
+    <shade_type>solid</shade_type>
+  </wallpaper>
+  <wallpaper deleted="false">
+    <name>Desert</name>
+    <filename>/usr/share/gnome-background-properties/kof-desert.xml</filename>
+    <options>zoom</options>
+  </wallpaper>
+</wallpapers>

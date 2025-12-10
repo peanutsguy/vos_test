@@ -1,0 +1,70 @@
+<background>
+	<starttime>
+		<year>2018</year>
+		<month>1</month>
+		<day>1</day>
+		<hour>0</hour>
+		<minute>0</minute>
+		<second>0</second>
+	</starttime>
+
+	<static>
+		<file>/usr/share/backgrounds/kof/desert/desert_05.png</file>
+		<duration>21600.0</duration>
+	</static>
+
+	<transition type="overlay">
+		<duration>300.0</duration>
+		<from>/usr/share/backgrounds/kof/desert/desert_05.png</from>
+		<to>/usr/share/backgrounds/kof/desert/desert_01.png</to>
+	</transition>
+
+	<static>
+		<file>/usr/share/backgrounds/kof/desert/desert_01.png</file>
+		<duration>8700.0</duration>
+	</static>
+
+	<transition type="overlay">
+		<duration>300.0</duration>
+		<from>/usr/share/backgrounds/kof/desert/desert_01.png</from>
+		<to>/usr/share/backgrounds/kof/desert/desert_02.png</to>
+	</transition>
+
+	<static>
+		<file>/usr/share/backgrounds/kof/desert/desert_02.png</file>
+		<duration>10500.0</duration>
+	</static>
+
+	<transition type="overlay">
+		<duration>300.0</duration>
+		<from>/usr/share/backgrounds/kof/desert/desert_02.png</from>
+		<to>/usr/share/backgrounds/kof/desert/desert_03.png</to>
+	</transition>
+
+	<static>
+		<file>/usr/share/backgrounds/kof/desert/desert_03.png</file>
+		<duration>12300.0</duration>
+	</static>
+
+	<transition type="overlay">
+		<duration>300.0</duration>
+		<from>/usr/share/backgrounds/kof/desert/desert_03.png</from>
+		<to>/usr/share/backgrounds/kof/desert/desert_04.png</to>
+	</transition>
+
+	<static>
+		<file>/usr/share/backgrounds/kof/desert/desert_04.png</file>
+		<duration>12300.0</duration>
+	</static>
+
+	<transition type="overlay">
+		<duration>300.0</duration>
+		<from>/usr/share/backgrounds/kof/desert/desert_04.png</from>
+		<to>/usr/share/backgrounds/kof/desert/desert_05.png</to>
+	</transition>
+
+	<static>
+		<file>/usr/share/backgrounds/kof/desert/desert_05.png</file>
+		<duration>19500.0</duration>
+	</static>
+</background>
