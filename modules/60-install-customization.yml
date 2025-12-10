@@ -2,7 +2,7 @@ name: install-debs
 type: shell
 commands:
   # - bash /customizations/install-gnome-extensions.sh
-  - plymouth-set-default-theme -R coca
+  - plymouth-set-default-theme kof
   - bash /customizations/install-themes.sh
   - dconf update
   - rm -rf /customizations
