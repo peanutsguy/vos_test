@@ -36,16 +36,6 @@ stages:
       - wget
       - unzip
 
-  - name: gnome-extensions
-    type: apt
-    source:
-      packages:
-      - gnome-shell-extension-appindicator
-      - gnome-shell-extension-arc-menu
-      - gnome-shell-extension-blur-my-shell
-      - gnome-shell-extension-dash-to-panel
-      - gnome-shell-extension-user-theme
-
   # - name: example-commands # Sample module demonstrating the Shell module with custom commands
   #   type: shell
   #   commands:
