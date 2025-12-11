@@ -44,11 +44,18 @@ do
         mv "$extdir" "$dest"
         chown -R root:root "$dest"
         chmod -R a+rX "$dest"
+        # compile system-wide gsettings schemas so gschemas.compiled exists
+        if command -v glib-compile-schemas >/dev/null 2>&1 && [ -d /usr/share/glib-2.0/schemas ]; then
+            glib-compile-schemas /usr/share/glib-2.0/schemas || true
+        fi
     else
         # fallback: move everything into the system extensions dir
         mv "$tmpdir"/* "$SYS_EXT_DIR"/ 2>/dev/null || true
         chown -R root:root "$SYS_EXT_DIR"
         chmod -R a+rX "$SYS_EXT_DIR"
+        if command -v glib-compile-schemas >/dev/null 2>&1 && [ -d /usr/share/glib-2.0/schemas ]; then
+            glib-compile-schemas /usr/share/glib-2.0/schemas || true
+        fi
     fi
 
     rm -rf "$tmpdir"
