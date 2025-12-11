@@ -56,6 +56,6 @@ do
 
     rm -rf "$tmpdir"
     echo "Installed ${EXTENSION_ID} to $SYS_EXT_DIR (system-wide)"
-    gnome-extensions enable ${EXTENSION_ID}
+    # gnome-extensions enable ${EXTENSION_ID}
     rm ${EXTENSION_ID}.zip
 done
