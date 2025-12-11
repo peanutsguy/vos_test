@@ -15,10 +15,39 @@ do
         | jq -r --arg pk "$PK" '.shell_version_map | map(.pk) | max')
     echo "Downloading $EXTENSION_ID version $VERSION_TAG with PK $PK"
     wget -O ${EXTENSION_ID}.zip "https://extensions.gnome.org/download-extension/${EXTENSION_ID}.shell-extension.zip?version_tag=$VERSION_TAG"
-    gnome-extensions install --force ${EXTENSION_ID}.zip
-    if ! gnome-extensions list | grep --quiet ${EXTENSION_ID}; then
-        busctl --user call org.gnome.Shell.Extensions /org/gnome/Shell/Extensions org.gnome.Shell.Extensions InstallRemoteExtension s ${EXTENSION_ID}
+    # Install as a system GNOME extension (/usr/share/gnome-shell/extensions)
+    SYS_EXT_DIR="/usr/share/gnome-shell/extensions"
+    mkdir -p "$SYS_EXT_DIR"
+    tmpdir=$(mktemp -d)
+
+    if command -v unzip >/dev/null 2>&1; then
+        unzip -q "${EXTENSION_ID}.zip" -d "$tmpdir"
+    elif command -v bsdtar >/dev/null 2>&1; then
+        bsdtar -xf "${EXTENSION_ID}.zip" -C "$tmpdir"
+    else
+        echo "neither unzip nor bsdtar found; cannot unpack ${EXTENSION_ID}.zip" >&2
+        rm -rf "$tmpdir"
+        continue
     fi
+
+    # locate directory that contains metadata.json (the extension root)
+    extdir=$(find "$tmpdir" -type f -name metadata.json -printf '%h\n' | head -n1)
+    if [ -n "$extdir" ]; then
+        dest="$SYS_EXT_DIR/${EXTENSION_ID}"
+        # remove any existing installation and move the new one in place (running as root)
+        rm -rf "$dest"
+        mv "$extdir" "$dest"
+        chown -R root:root "$dest"
+        chmod -R a+rX "$dest"
+    else
+        # fallback: move everything into the system extensions dir
+        mv "$tmpdir"/* "$SYS_EXT_DIR"/ 2>/dev/null || true
+        chown -R root:root "$SYS_EXT_DIR"
+        chmod -R a+rX "$SYS_EXT_DIR"
+    fi
+
+    rm -rf "$tmpdir"
+    echo "Installed ${EXTENSION_ID} to $SYS_EXT_DIR (system-wide)"
     gnome-extensions enable ${EXTENSION_ID}
     rm ${EXTENSION_ID}.zip
 done
