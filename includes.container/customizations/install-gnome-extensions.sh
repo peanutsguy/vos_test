@@ -1,5 +1,10 @@
 #!/bin/bash
 set -e
+
+if [ ! -f "/etc/dconf/db/local" ]; then
+    touch /etc/dconf/db/local
+fi
+
 array=( https://extensions.gnome.org/extension/615/appindicator-support/
 https://extensions.gnome.org/extension/4655/date-menu-formatter/
 https://extensions.gnome.org/extension/3628/arcmenu/
